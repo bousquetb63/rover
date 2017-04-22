@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Reviews</h1>
+    <div class="row">
+      <% @reviews.each do |review| %>
+        <div class="col s6">
+            <div class="card">
+              <div class="card-image">
+                <span class="card-title"><%= review.name %></span>
+              </div>
+              <div class="card-content">
+                <p><%= review.description %></p>
+              </div>
+              <div class="card-action">
+                <%= link_to 'View', review %>
+               </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+</div>
+

@@ -1,0 +1,68 @@
+<div class="container">
+<%= form_for @review, html: { multipart: true } do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <p class="flow-text">Name</p>
+    <%= f.text_field :name, :class => "grey lighten-2" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Category</p>
+    <%= f.text_field :category, :class => "grey lighten-2 autocomplete" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Description</p>
+    <%= f.text_area :description, :class => "materialize-textarea grey lighten-2" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Pros, Woof Woof</p>
+    <%= f.text_area :pros, :class => "materialize-textarea grey lighten-2" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Cons, Bone to pick</p>
+    <%= f.text_area :cons, :class => "materialize-textarea grey lighten-2" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Image</p>
+    <%= f.file_field :image, :class => "file grey lighten-2" %>
+  </div>
+  <div class="field">
+    <p class="flow-text">Rating</p>
+    <div class="col-sm-6" id='star-rating'></div>  
+  </div>
+  </br>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => "waves-effect waves-light btn" %>
+  </div>
+<% end %>
+</div>
+<script>
+$('#star-rating').raty({
+    path: '/assets',
+    scoreName: 'review[rating]'
+});
+$(document).ready(function(){
+  $('input.autocomplete').autocomplete({
+    data: {
+	  "Products": null,
+	  "Services": null,
+	  "Stores": null,
+	  "Restraunts": null,
+	  "Parks": null,
+	  "Events": null,
+	  "Shelters": null,
+	  "Hotels": null
+	}
+  });
+});
+
+</script>

@@ -1,0 +1,40 @@
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <p class="flow-text"><%= @review.name %></p>
+  <p>
+    <div class="star-rating" data-score= <%= @review.rating %> ></div>
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <%= @review.category %>
+  </p>
+  
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">Description</div>
+      <div class="collapsible-body"><span><%= @review.description %></span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"> Woof Woof! (Pros)</div>
+      <div class="collapsible-body"><span><%= @review.pros %></span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">Bone to pick (Cons)</div>
+      <div class="collapsible-body"><span><%= @review.cons %></span></div>
+    </li>
+  </ul>
+  
+  <%= link_to 'Edit', edit_review_path(@review) %> |
+  <%= link_to 'Back', reviews_path %>
+</div>
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
