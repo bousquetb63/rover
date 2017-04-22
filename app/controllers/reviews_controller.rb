@@ -15,6 +15,9 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
   end
+  
+  def home
+  end
 
   # GET /reviews/new
   def new
