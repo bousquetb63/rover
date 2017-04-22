@@ -26,10 +26,15 @@
         </ul>
       </div>
       <ul class="side-nav" id="mobile-demo">
-        <li><a class="black-text" href="sass.html">Sass</a></li>
-        <li><a class="black-text" href="badges.html">Components</a></li>
-        <li><a class="black-text" href="collapsible.html">Javascript</a></li>
-        <li><a class="black-text" href="mobile.html">Mobile</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'New Review', new_review_path %></li>
+              <li><%= link_to 'My Reviews', reviews_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>
       </ul>
     </div>
   </nav>
