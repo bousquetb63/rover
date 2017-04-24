@@ -4,11 +4,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    if user_signed_in?
-      @reviews = Review.where(:user_id => current_user.id)
-    else
-      @reviews = Review.all
-    end
+    @reviews = Review.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
   # GET /reviews/1
@@ -17,6 +13,7 @@ class ReviewsController < ApplicationController
   end
   
   def home
+    @reviews = Review.where(["name LIKE ?", "%#{params[:search]}%"])
   end
 
   # GET /reviews/new
@@ -27,13 +24,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
   end
-  
-  def all
-    #if user_signed_in?
-    #  @userreviews = Review.where(:user_id => current_user.id)
-    #end
-    @reviews = Review.all
-  end
+
 
   # POST /reviews
   # POST /reviews.json
