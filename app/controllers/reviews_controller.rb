@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   end
   
   def home
-    @reviews = Review.where(["name LIKE ?", "%#{params[:search]}%"])
+    @reviews = Review.search(params[:search])
   end
 
   # GET /reviews/new
