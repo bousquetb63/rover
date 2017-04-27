@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
     
     def self.search(search)
         if search
-            where(["name LIKE ?", "%#{params[:search]}%"])
+            where(["name ILIKE ?", "%#{params[:search]}%"])
         else
             all
         end
