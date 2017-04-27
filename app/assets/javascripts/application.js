@@ -18,5 +18,7 @@
 //= require jquery.raty
 
 $(document).ready(function(){
-    $(".button-collapse").sideNav();
+    $(".button-collapse").sideNav({
+        draggable: true
+    });
 });
