@@ -17,8 +17,6 @@
 //= require materialize-sprockets
 //= require jquery.raty
 
-$(function(){
-    $(".mobile").sideNav({
-        draggable: true
-    });
-})
+$(document).ready(function(){
+    $(".button-collapse").sideNav();
+});

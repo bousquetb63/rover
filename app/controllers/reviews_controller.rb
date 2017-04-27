@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :only => [:new]
+  before_filter :home, :index
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.where(["name LIKE ?", "%#{params[:search]}%"])
+    @reviews = @search.result
   end
 
   # GET /reviews/1
@@ -13,7 +14,7 @@ class ReviewsController < ApplicationController
   end
   
   def home
-    @reviews = Review.search(params[:search])
+    @search = Review.ransack(params[:q])
   end
 
   # GET /reviews/new
