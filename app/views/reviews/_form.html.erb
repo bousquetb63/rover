@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <p class="flow-text">Category</p>
-    <%= f.text_field :category, :class => "grey lighten-2 autocomplete" %>
+    <%= f.text_field :category, :class => "grey lighten-2 autocomplete", autocomplete: "off" %>
   </div>
   <div class="field">
     <p class="flow-text">Description</p>
@@ -59,11 +59,12 @@ $(document).ready(function(){
 	  "Products": null,
 	  "Services": null,
 	  "Stores": null,
-	  "Restraunts": null,
+	  "Restaurants": null,
 	  "Parks": null,
 	  "Events": null,
 	  "Shelters": null,
-	  "Hotels": null
+	  "Hotels": null,
+	  "Miscellaneous": null
 	}
   });
 });
