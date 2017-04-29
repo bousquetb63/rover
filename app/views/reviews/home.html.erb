@@ -151,7 +151,6 @@ body {
           <div class="crop">
             <%= f.submit :type => :image, :src => "assets/services.jpg", :class => "crop container-shadow" %>
             <%= f.hidden_field :category_cont, :value => "services" %>
-            <%= image_tag("services.jpg", :class => "crop container-shadow") %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Parks </p>
@@ -163,9 +162,8 @@ body {
         <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= f.submit :type => :image, :src => "assets/parks.jpg", :class => "crop container-shadow" %>
+            <%= f.submit :type => :image, :src => "assets/dog10.jpg", :class => "crop container-shadow" %>
             <%= f.hidden_field :category_cont, :value => "parks" %>
-            <%= image_tag("dog10.jpg", :class => "crop container-shadow") %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Events </p>
