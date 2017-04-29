@@ -11,6 +11,9 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    if user_signed_in?
+      @currentUser = current_user.id
+    end
   end
   
   def home
@@ -76,6 +79,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:name, :description, :rating, :pros, :cons, :category, :user_id, :image)
+      params.require(:review).permit(:name, :description, :rating, :pros, :cons, :category, :user_id, :image, :address)
     end
 end

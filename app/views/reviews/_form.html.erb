@@ -23,6 +23,10 @@
     <%= f.text_area :description, :class => "materialize-textarea grey lighten-2" %>
   </div>
   <div class="field">
+    <p class="flow-text">Address</p>
+    <%= f.text_area :address, :class => "materialize-textarea grey lighten-2" %>
+  </div>
+  <div class="field">
     <p class="flow-text">Pros, Woof Woof</p>
     <%= f.text_area :pros, :class => "materialize-textarea grey lighten-2" %>
   </div>
@@ -39,7 +43,7 @@
     <div class="col-sm-6" id='star-rating'></div>  
   </div>
   </br>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :user_id, :value => @review.user.id %>
   <div class="actions">
     <%= f.submit 'Submit', :class => "waves-effect waves-light btn" %>
   </div>

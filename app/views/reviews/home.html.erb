@@ -44,6 +44,7 @@ body {
 
 .dataNumber {
   margin-top: auto;
+  text-align: center;
 }
 
 .crop {
@@ -53,6 +54,11 @@ body {
 }
 
 .crop img {
+    width: 400px;
+    height: 300px;
+}
+
+.crop input {
     width: 400px;
     height: 300px;
 }
@@ -88,95 +94,124 @@ body {
   <div class="container">
     <div class="row">
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("products.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/products.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "products" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Products </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("parks.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/parks.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "parks" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Services </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("hotels.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/hotels.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "stores" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Stores </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("events.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/events.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "restaurants" %>
           </div>
           <div class='text-box'>
-            <p class='dataNumber white-text cat-shadow'> Restraunts </p>
+            <p class='dataNumber white-text cat-shadow'> Restaurants </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
+            <%= f.submit :type => :image, :src => "assets/services.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "services" %>
             <%= image_tag("services.jpg", :class => "crop container-shadow") %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Parks </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
+            <%= f.submit :type => :image, :src => "assets/parks.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "parks" %>
             <%= image_tag("dog10.jpg", :class => "crop container-shadow") %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Events </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("dog20.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/dog20.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "shelters" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Shelters </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("dog30.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/dog30.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "hotel" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Hotel </p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col s4">
+        <%= search_form_for @search do |f| %>
         <div class="containerBox">
           <div class="crop">
-            <%= image_tag("dog40.jpg", :class => "crop container-shadow") %>
+            <%= f.submit :type => :image, :src => "assets/dog40.jpg", :class => "crop container-shadow" %>
+            <%= f.hidden_field :category_cont, :value => "miscellaneous" %>
           </div>
           <div class='text-box'>
             <p class='dataNumber white-text cat-shadow'> Miscellaneous </p>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
     <div class="container center">
             <div style="width: 728px; height: 90px; background: #428bca; color: #fff; line-height: 90px; text-align: center; ">LEADERBOARD</div>

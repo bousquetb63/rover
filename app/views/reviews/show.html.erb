@@ -24,9 +24,14 @@
       <div class="collapsible-header">Bone to pick (Cons)</div>
       <div class="collapsible-body"><span><%= @review.cons %></span></div>
     </li>
+    <li>
+      <div class="collapsible-header">Address</div>
+      <div class="collapsible-body"><span><%= @review.address %></span></div>
+    </li>
+    <% if @review.image.file? %>
+      <%= image_tag @review.image.url %>
+    <% end %>
   </ul>
-  
-  <%= link_to 'Edit', edit_review_path(@review) %> |
   <%= link_to 'Back', reviews_path %>
 </div>
 <script>
